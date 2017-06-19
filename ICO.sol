@@ -8,7 +8,7 @@ contract CrowdsaleController {
   function contributeETH() payable returns (uint256 amount);
 }
 
-contract BancorBuyer {
+contract SNTBuyer {
   mapping (address => uint) public balances;
   uint public reward;
   bool public bought_tokens;
