@@ -20,13 +20,13 @@ contract Crowdsale {
     
     function () {
         uint amount = msg.value;
-        funders[funders.length++] = Funder({addr: msg.sender, amount: amount});
         amountRaised += amount;
         ERC20(token).transfer(msg.sender, amount / price);
     }
 
     function retrieve(){
         beneficiary.send(amountRaised);
-        suicide(beneficiary);
+        amountRaised = 0;
+        //suicide(beneficiary);
     }
 }
